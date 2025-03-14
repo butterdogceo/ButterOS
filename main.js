@@ -366,8 +366,9 @@ function gotDaHubApps(apps) {
 function gotButterDogApps(apps) {
   apps["apps"].forEach((app) => {
     let link = app.AltLink || app.Link || "";
-    if (!link.includes("google.com") && !link.includes("b-dog.co")) {
-      if (!link.includes("http")) {
+    const lowerLink = link.toLowerCase();
+    if (!lowerLink.includes("google.com") && !lowerLink.includes("b-dog.co") && !lowerLink.includes("butteros")) {
+      if (!lowerLink.includes("http")) {
         link = `https://butterdogceo.github.io/bdogco/${link}`;
       }
 
